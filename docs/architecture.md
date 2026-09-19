@@ -54,3 +54,9 @@ Rich tables & summaries   CycloneDX 1.6 Cryptography   Self-contained visual rep
    - **ML Classifier**: Multi-class Random Forest model providing function-level classification probabilities.
 5. **Evidence Fusion (`detection/`)**: Combines detector outputs probabilistically, maps findings to specific function addresses, applies NIST/security policies, and formats transparent explainability statements.
 6. **Reporting (`cbom/`, `reporting/`)**: Emits human-readable terminal output, machine-readable JSON, CycloneDX 1.6 CBOM, and standalone HTML reports.
+
+## Extensibility & Design Invariants
+
+- **Zero Dynamic Execution**: The binary analyzer operates purely via static inspection; target firmware binaries are never executed or dynamically loaded.
+- **Pluggable Analyzers**: The `BinaryAnalyzer` abstract base class decouples the disassembly engine from the detection logic, enabling seamless future backend additions without touching signatures or ML models.
+
