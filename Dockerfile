@@ -4,6 +4,7 @@ LABEL maintainer="OpenCryptoDetect Contributors"
 LABEL description="Cross-architecture cryptographic primitive detection CLI for firmware binaries"
 
 ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
     DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
