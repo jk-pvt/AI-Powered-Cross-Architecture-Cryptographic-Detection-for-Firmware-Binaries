@@ -45,6 +45,12 @@ dependencies = [
     "jinja2>=3.1.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries"
+Repository = "https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries.git"
+Documentation = "https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries/tree/main/docs"
+"Bug Tracker" = "https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries/issues"
+
 [project.optional-dependencies]
 analysis = [
     "lief>=0.14.0",
