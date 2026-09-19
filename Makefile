@@ -22,7 +22,10 @@ train:
 benchmark:
 	ocd benchmark
 
+check: lint test
+
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
 	find . -type f -name "*.pyc" -delete
-	rm -rf build dist *.egg-info .pytest_cache .coverage
+	rm -rf build dist *.egg-info .pytest_cache .ruff_cache .coverage
+
