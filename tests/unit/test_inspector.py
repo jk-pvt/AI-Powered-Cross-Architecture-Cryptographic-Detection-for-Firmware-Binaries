@@ -42,3 +42,10 @@ def test_empty_file_fails(tmp_path):
     empty_file.touch()
     with pytest.raises(InputInspectionError):
         FileInspector().inspect(empty_file)
+
+
+def test_nonexistent_file_raises(tmp_path):
+    missing_file = tmp_path / "does_not_exist.bin"
+    with pytest.raises(InputInspectionError):
+        FileInspector().inspect(missing_file)
+
