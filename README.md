@@ -1,6 +1,6 @@
 # OpenCryptoDetect
 
-> **Open-source cross-architecture cryptographic primitive detection for firmware binaries.**
+> **Open-source cross-architecture cryptographic primitive detection for firmware binaries and IoT images.**
 
 [![CI](https://img.shields.io/badge/CI-Passing-brightgreen?logo=github&style=flat-square)](https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries/actions/workflows/ci.yml)
 [![Tests](https://img.shields.io/badge/Tests-19%20Passed-success?logo=pytest&style=flat-square)](https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries/actions/workflows/tests.yml)
