@@ -1,0 +1,55 @@
+{
+  "timestamp": 1789827194.872992,
+  "total_samples": 169,
+  "approaches": {
+    "Signature Only": {
+      "precision": 0.877,
+      "recall": 0.573,
+      "f1_score": 0.693,
+      "fpr": 0.222,
+      "avg_latency_ms": 0.01,
+      "true_positives": 71,
+      "false_positives": 10,
+      "false_negatives": 53,
+      "true_negatives": 35
+    },
+    "Heuristic Only": {
+      "precision": 0.931,
+      "recall": 0.218,
+      "f1_score": 0.353,
+      "fpr": 0.044,
+      "avg_latency_ms": 0.006,
+      "true_positives": 27,
+      "false_positives": 2,
+      "false_negatives": 97,
+      "true_negatives": 43
+    },
+    "ML Only": {
+      "precision": 1.0,
+      "recall": 0.782,
+      "f1_score": 0.878,
+      "fpr": 0.0,
+      "avg_latency_ms": 14.791,
+      "true_positives": 97,
+      "false_positives": 0,
+      "false_negatives": 27,
+      "true_negatives": 45
+    },
+    "Hybrid Engine": {
+      "precision": 0.882,
+      "recall": 0.726,
+      "f1_score": 0.796,
+      "fpr": 0.267,
+      "avg_latency_ms": 14.507,
+      "true_positives": 90,
+      "false_positives": 12,
+      "false_negatives": 34,
+      "true_negatives": 33
+    }
+  },
+  "architecture_breakdown": {
+    "x86_64": 0.719,
+    "aarch64": 0.75,
+    "arm": 0.714
+  }
+}

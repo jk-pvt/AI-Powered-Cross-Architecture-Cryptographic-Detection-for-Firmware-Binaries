@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opencryptodetect"
+version = "1.0.0"
+description = "Open-source cross-architecture cryptographic primitive detection for firmware binaries"
+readme = "README.md"
+authors = [
+    { name = "OpenCryptoDetect Contributors" }
+]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Disassemblers",
+]
+keywords = [
+    "cryptography",
+    "firmware",
+    "reverse-engineering",
+    "cbom",
+    "binary-analysis",
+    "machine-learning",
+    "security"
+]
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+    "capstone>=5.0.0",
+    "pyelftools>=0.30",
+    "jinja2>=3.1.0",
+]
+
+[project.optional-dependencies]
+analysis = [
+    "lief>=0.14.0",
+]
+ml = [
+    "scikit-learn>=1.3.0",
+    "numpy>=1.24.0",
+    "joblib>=1.3.0",
+]
+all = [
+    "opencryptodetect[analysis,ml]",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+ocd = "opencryptodetect.cli.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
