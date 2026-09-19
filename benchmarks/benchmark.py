@@ -3,7 +3,7 @@
 import json
 import time
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from rich.console import Console
 from rich.table import Table
@@ -26,7 +26,7 @@ DEFAULT_DATASET = Path(__file__).parent.parent / "dataset" / "metadata" / "featu
 DEFAULT_OUTPUT = Path(__file__).parent / "results" / "benchmark_results.json"
 
 
-def build_sample_context(sample: Dict[str, Any]) -> AnalysisContext:
+def build_sample_context(sample: dict[str, Any]) -> AnalysisContext:
     """Reconstruct an AnalysisContext and FunctionContext from dataset sample metadata and features."""
     feats = sample["features"]
     insn_cnt = max(1, int(feats[0]))
@@ -83,9 +83,9 @@ def build_sample_context(sample: Dict[str, Any]) -> AnalysisContext:
 
 
 def run_benchmarks(
-    dataset_dir: Optional[Path] = None,
-    output_file: Optional[Path] = None,
-) -> Dict[str, Any]:
+    dataset_dir: Path | None = None,
+    output_file: Path | None = None,
+) -> dict[str, Any]:
     """Execute evaluation comparing Signature-only, Heuristic-only, ML-only, and Hybrid detection."""
     dataset_path = dataset_dir or DEFAULT_DATASET
     output_path = output_file or DEFAULT_OUTPUT
@@ -107,7 +107,7 @@ def run_benchmarks(
         "Hybrid Engine": OCDConfig(enable_signatures=True, enable_heuristics=True, enable_ml=True),
     }
 
-    benchmark_results: Dict[str, Any] = {}
+    benchmark_results: dict[str, Any] = {}
 
     table = Table(title="[bold]Benchmark Comparison: Detection Approaches[/bold]")
     table.add_column("Approach", style="cyan")
@@ -184,7 +184,7 @@ def run_benchmarks(
     arch_table.add_column("Accuracy", justify="right")
 
     detector_hybrid = CryptoDetectorEngine(configs["Hybrid Engine"])
-    arch_groups: Dict[str, List[Any]] = {}
+    arch_groups: dict[str, list[Any]] = {}
     for s in samples:
         arch_groups.setdefault(s["architecture"], []).append(s)
 
