@@ -1,3 +1,10 @@
+/*
+ * OpenCryptoDetect - Synthetic Reference Implementation: AES-128
+ *
+ * Implements standard Rijndael key expansion and round transformations
+ * (SubBytes, ShiftRows, MixColumns, AddRoundKey) for dataset synthesis.
+ */
+
 #include <stdint.h>
 
 static const uint8_t sbox[256] = {
