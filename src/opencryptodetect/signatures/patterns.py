@@ -1,8 +1,9 @@
-"""Pattern matchers for cryptographic structures and instruction sequences."""
-
+import struct
 
 from opencryptodetect.binary.functions import FunctionContext
 from opencryptodetect.signatures.constants import AES_INVSBOX, AES_SBOX
+
+CHACHA20_ROTATIONS = frozenset({16, 12, 8, 7})
 
 
 def match_sbox_in_bytes(data: bytes) -> str | None:
@@ -27,17 +28,16 @@ def match_sbox_in_bytes(data: bytes) -> str | None:
 
 def match_chacha20_quarter_round(func: FunctionContext) -> bool:
     """Detect ARX quarter-round instruction pattern in ChaCha20 functions."""
-    rotations = {16, 12, 8, 7}
     found_rotations = set()
 
     for insn in func.instructions:
         if insn.category == "shift_rotate":
             for imm in insn.immediate_values:
-                if imm in rotations:
+                if imm in CHACHA20_ROTATIONS:
                     found_rotations.add(imm)
 
     # If function contains shift/rotate operations with 16, 12, 8, and 7
-    return rotations.issubset(found_rotations)
+    return CHACHA20_ROTATIONS.issubset(found_rotations)
 
 
 def match_hmac_pad_constants(func: FunctionContext) -> bool:
@@ -59,7 +59,6 @@ def match_table_sequence(data: bytes, table_words: list[int], word_size: int = 4
     if len(data) < word_size * min_matches:
         return False
 
-    import struct
     fmt = "<I" if word_size == 4 else "<Q"
     packed_prefix = b"".join(struct.pack(fmt, w) for w in table_words[:min_matches])
     if packed_prefix in data:
