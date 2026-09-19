@@ -4,6 +4,8 @@
 
 If you discover a vulnerability or security flaw in OpenCryptoDetect, please report it responsibly by contacting the maintainers directly or opening a private GitHub Security Advisory. Do **not** disclose security vulnerabilities via public GitHub issues.
 
+We aim to acknowledge receipt of all vulnerability reports within 48 hours and provide patch updates through private security advisories.
+
 ## Threat Model and Hostile Firmware Handling
 
 OpenCryptoDetect treats all scanned binaries and firmware files as untrusted, potentially hostile input.
