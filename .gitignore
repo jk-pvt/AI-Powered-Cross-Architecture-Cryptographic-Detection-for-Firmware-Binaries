@@ -58,3 +58,6 @@ tests/fixtures/batch_out/
 *.ocd.json
 *.cbom.json
 *.ocd.html
+*.log
+.DS_Store
+
