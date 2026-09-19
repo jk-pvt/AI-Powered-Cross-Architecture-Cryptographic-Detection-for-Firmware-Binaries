@@ -1,4 +1,4 @@
-# OpenCryptoDetect (`ocd`)
+# OpenCryptoDetect
 
 > **Open-source cross-architecture cryptographic primitive detection for firmware binaries.**
 
