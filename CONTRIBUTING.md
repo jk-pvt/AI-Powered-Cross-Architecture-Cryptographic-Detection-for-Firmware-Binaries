@@ -6,8 +6,8 @@ Thank you for your interest in contributing to **OpenCryptoDetect (`ocd`)**! We 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/opencryptodetect/opencryptodetect.git
-   cd opencryptodetect
+   git clone https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries.git
+   cd AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries
    ```
 
 2. **Create a virtual environment:**

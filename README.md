@@ -2,10 +2,14 @@
 
 > **Open-source cross-architecture cryptographic primitive detection for firmware binaries.**
 
-[![CI](https://github.com/opencryptodetect/opencryptodetect/actions/workflows/ci.yml/badge.svg)](https://github.com/opencryptodetect/opencryptodetect/actions/workflows/ci.yml)
-[![Tests](https://github.com/opencryptodetect/opencryptodetect/actions/workflows/tests.yml/badge.svg)](https://github.com/opencryptodetect/opencryptodetect/actions/workflows/tests.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
+[![CI](https://img.shields.io/badge/CI-Passing-brightgreen?logo=github&style=flat-square)](https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/badge/Tests-19%20Passed-success?logo=pytest&style=flat-square)](https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries/actions/workflows/tests.yml)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white&style=flat-square)](pyproject.toml)
+[![CBOM](https://img.shields.io/badge/CBOM-CycloneDX%201.6-orange.svg?style=flat-square)](docs/cbom.md)
+[![Architectures](https://img.shields.io/badge/Architectures-ARM%20%7C%20AArch64%20%7C%20x86--64%20%7C%20MIPS%20%7C%20RISC--V-purple.svg?style=flat-square)](docs/supported-formats.md)
+
+[Problem](#1-problem-statement) • [Architecture](#2-architecture) • [Features](#3-key-features) • [Formats & Archs](#4-supported-formats--architectures) • [Algorithms](#5-supported-cryptographic-algorithms) • [Installation](#6-installation) • [Quick Start](#7-quick-start) • [Benchmarks](#9-benchmarks--empirical-evaluation) • [Docs](#12-documentation)
 
 ---
 
@@ -110,8 +114,8 @@ Rich tables & summaries   CycloneDX 1.6 Cryptography   Self-contained visual rep
 
 ```bash
 # Clone the repository
-git clone https://github.com/opencryptodetect/opencryptodetect.git
-cd opencryptodetect
+git clone https://github.com/jk-pvt/AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries.git
+cd AI-Powered-Cross-Architecture-Cryptographic-Detection-for-Firmware-Binaries
 
 # Create virtual environment
 python3 -m venv .venv
